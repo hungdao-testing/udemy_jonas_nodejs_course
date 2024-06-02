@@ -2,14 +2,13 @@
   "name": "natours",
   "version": "1.0.0",
   "description": "Learning node, express and mongoDB",
-  "main": "app.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js",
+    "dev": "NODE_ENV=development node server.js",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
-    "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
+    "build:js": "parcel build ./public/js/index.js --dist-dir ./public/output"
   },
   "author": "Jonas Schmedtmann",
   "license": "ISC",
@@ -49,10 +48,16 @@
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "parcel-bundler": "^1.12.3",
-    "prettier": "^1.17.0"
+    "parcel": "^2.12.0",
+    "prettier": "^1.17.0",
+    "process": "^0.11.10"
   },
   "engines": {
-    "node": "^10"
-  }
+    "node": ">= 18"
+  },
+  "source": "./public/js/index.js",
+  "targets": {
+    "main": false
+  },
+  "browserslist": "> 0.25%"
 }
